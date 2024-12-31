@@ -45,16 +45,17 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 		</None>
+		<None Include="$(PkgOTAPI_UnrealMultiple_Upcoming)\lib\net9.0\ModFramework.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		</None>
 		<None Remove="\lib\net9.0\ModFramework.dll" />
 		<None Remove="\lib\net9.0\ModFramework.dll" />
 		<None Remove="\lib\net9.0\OTAPI.dll" />
 		<None Remove="\lib\net9.0\ModFramework.dll" />
 		<None Remove="\lib\net9.0\OTAPI.Runtime.dll" />
 		<None Remove="\lib\net9.0\ModFramework.dll" />
-		<None Include="ModFramework.dll">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-		</None>
+		
 	</ItemGroup>
 
 	<Target Name="CheckMsgfmtCallable">
