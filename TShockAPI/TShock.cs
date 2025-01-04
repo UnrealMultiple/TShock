@@ -449,7 +449,7 @@ namespace TShockAPI
 					// Initialize the AchievementManager, which is normally only done on clients.
 					Game._achievements = new AchievementManager();
 
-					IL.Terraria.Initializers.AchievementInitializer.Load += OnAchievementInitializerLoad;
+					//IL.Terraria.Initializers.AchievementInitializer.Load += AchievementInitializer_Load; ;
 
 					// Actually call AchievementInitializer.Load, which is also normally only done on clients.
 					AchievementInitializer.Load();
@@ -498,18 +498,24 @@ namespace TShockAPI
 			}
 		}
 
+		//private void AchievementInitializer_Load(ILContext il)
+		//{
+		//	for (var i = 0; i < 4; i++)
+		//		il.Body.Instructions.RemoveAt(0);
+		//}
+
 		private static void RemoteClient_Reset(On.Terraria.RemoteClient.orig_Reset orig, RemoteClient client)
 		{
 			client.ClientUUID = null;
 			orig(client);
 		}
 
-		private static void OnAchievementInitializerLoad(ILContext il)
-		{
-			// Modify AchievementInitializer.Load to remove the Main.netMode == 2 check (occupies the first 4 IL instructions)
-			for (var i = 0; i < 4; i++)
-				il.Body.Instructions.RemoveAt(0);
-		}
+		//private static void OnAchievementInitializerLoad(ILContext il)
+		//{
+		//	// Modify AchievementInitializer.Load to remove the Main.netMode == 2 check (occupies the first 4 IL instructions)
+		//	for (var i = 0; i < 4; i++)
+		//		il.Body.Instructions.RemoveAt(0);
+		//}
 
 		protected void CrashReporter_HeapshotRequesting(object sender, EventArgs e)
 		{
@@ -532,7 +538,7 @@ namespace TShockAPI
 				}
 				SaveManager.Instance.Dispose();
 
-				IL.Terraria.Initializers.AchievementInitializer.Load -= OnAchievementInitializerLoad;
+				//IL.Terraria.Initializers.AchievementInitializer.Load -= OnAchievementInitializerLoad;
 
 				ModuleManager.Dispose();
 
