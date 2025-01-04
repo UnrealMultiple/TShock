@@ -30,11 +30,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-		<PackageReference Include="ModFramework" Version="1.1.11" />
+		<PackageReference Include="ModFramework" Version="1.1.13" />
 		<PackageReference Include="MySql.Data" Version="9.1.0" />
 		<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" /> <!-- only used to extract out to ./bin. -->
 		<PackageReference Include="GetText.NET" Version="8.0.5" />
-		<PackageReference Include="OTAPI.UnrealMultiple.Upcoming" Version="3.2.0" /> <!-- only used to extract out to ./bin. -->
+		<PackageReference Include="OTAPI.Upcoming" Version="3.2.3" /> <!-- only used to extract out to ./bin. -->
 
 		<!-- the launcher doesnt need the direct OTAPI reference, but since PackageReference[ExcludeFromSingleFile] doesnt work, exclude the assets and copy manually -->
 		<None Include="$(PkgOTAPI_UnrealMultiple_Upcoming)\lib\net9.0\OTAPI.dll">
